@@ -1,0 +1,35 @@
+.site-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-main {
+  flex: 1;
+  /* Offset for fixed header */
+  padding-top: 100px;
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-pink-accent);
+  color: var(--color-bg-surface);
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+  z-index: 100;
+  transition: top var(--duration-fast) var(--ease-in-out);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+@media (max-width: 1024px) {
+  .site-main {
+    padding-top: 90px;
+  }
+}

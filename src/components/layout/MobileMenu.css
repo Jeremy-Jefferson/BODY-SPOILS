@@ -1,0 +1,135 @@
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+}
+
+.mobile-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(77, 57, 43, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: fadeIn var(--duration-fast) var(--ease-out);
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 320px;
+  background-color: var(--color-bg-surface);
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight var(--duration-normal) var(--ease-out);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-menu-header .logo {
+  flex-shrink: 0;
+}
+
+.mobile-menu-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  color: var(--color-text-heading);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background-color var(--duration-fast) var(--ease-in-out);
+  flex-shrink: 0;
+}
+
+.mobile-menu-close:hover {
+  background-color: var(--color-pink-soft);
+}
+
+.mobile-menu-close:focus {
+  outline: 2px solid var(--color-pink-accent);
+  outline-offset: 2px;
+}
+
+.mobile-menu-nav {
+  flex: 1;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  overflow-y: auto;
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  color: var(--color-text-body);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--duration-fast) var(--ease-in-out);
+  letter-spacing: 0.02em;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.active {
+  background-color: var(--color-pink-soft);
+  color: var(--color-pink-accent);
+}
+
+.mobile-menu-link:focus {
+  outline: 2px solid var(--color-pink-accent);
+  outline-offset: 2px;
+}
+
+.mobile-menu-actions {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.mobile-menu-actions .btn {
+  width: 100%;
+}
+
+.mobile-menu-footer {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.mobile-menu-copyright {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  margin: 0;
+}

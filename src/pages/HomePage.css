@@ -1,0 +1,315 @@
+.home-page {
+  /* Page-specific styles */
+}
+
+/* Brand Intro Section */
+.brand-intro {
+  padding: var(--space-5xl) 0;
+}
+
+.brand-intro-content {
+  text-align: center;
+}
+
+.brand-intro-text {
+  font-size: var(--text-lg);
+  color: var(--color-text-body);
+  line-height: var(--leading-relaxed);
+  max-width: 700px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.brand-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.benefit-item {
+  text-align: center;
+  padding: var(--space-lg);
+}
+
+.benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-bg-soft);
+  color: var(--color-brown-soft);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-md);
+  transition: all var(--duration-normal) var(--ease-in-out);
+}
+
+.benefit-item:hover .benefit-icon {
+  background-color: var(--color-pink-soft);
+  transform: translateY(-2px);
+}
+
+.benefit-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-sm);
+}
+
+.benefit-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Services Preview */
+.services-preview {
+  padding: var(--space-5xl) 0;
+}
+
+.services-preview-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-2xl);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.service-card-body {
+  padding: var(--space-xl);
+}
+
+.service-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-sm);
+}
+
+.service-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-lg);
+}
+
+.service-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.service-duration {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.service-duration svg {
+  color: var(--color-brown-soft);
+  opacity: 0.8;
+}
+
+.service-price {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  color: var(--color-brown-deep);
+}
+
+/* Why Choose Us */
+.why-choose {
+  padding: var(--space-5xl) 0;
+}
+
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.why-choose-text {
+  font-size: var(--text-lg);
+  color: var(--color-text-body);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-xl);
+}
+
+.why-choose-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.why-choose-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: var(--text-base);
+  color: var(--color-text-body);
+}
+
+.check-icon {
+  color: var(--color-brown-soft);
+  font-weight: var(--font-bold);
+  flex-shrink: 0;
+}
+
+.why-choose-image {
+  position: relative;
+}
+
+.why-choose-image-inner {
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, var(--color-bg-soft) 0%, var(--color-pink-soft) 50%, var(--color-bg-alt) 100%);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-choose-image-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.image-placeholder {
+  color: var(--color-pink-accent);
+  opacity: 0.5;
+}
+
+/* Testimonials Preview */
+.testimonials-preview {
+  padding: var(--space-5xl) 0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.testimonial-card-body {
+  padding: var(--space-xl);
+}
+
+.testimonial-rating {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+  color: var(--color-brown-soft);
+  opacity: 0.9;
+}
+
+.testimonial-text {
+  font-size: var(--text-base);
+  color: var(--color-text-body);
+  font-style: italic;
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-lg);
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-author strong {
+  font-size: var(--text-base);
+  color: var(--color-text-heading);
+}
+
+.testimonial-author span {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.testimonials-cta {
+  text-align: center;
+}
+
+/* Booking CTA */
+.booking-cta {
+  padding: var(--space-5xl) 0;
+}
+
+.booking-cta-inner {
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-bg-soft) 0%, var(--color-pink-soft) 50%, var(--color-bg-alt) 100%);
+  padding: var(--space-3xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.booking-cta-text {
+  font-size: var(--text-lg);
+  color: var(--color-text-body);
+  max-width: 500px;
+  margin: 0 auto var(--space-xl);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .brand-benefits {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-benefits {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-preview-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .why-choose-image {
+    order: -1;
+  }
+  
+  .why-choose-image-inner {
+    aspect-ratio: 16/9;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}

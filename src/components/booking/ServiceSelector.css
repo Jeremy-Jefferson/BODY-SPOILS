@@ -1,0 +1,110 @@
+.service-selector-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-medium);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-xs);
+}
+
+.service-selector-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.service-selector-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.service-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-in-out);
+  background-color: var(--color-bg-surface);
+}
+
+.service-option:hover {
+  border-color: var(--color-pink-accent);
+  background-color: var(--color-pink-soft);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-option.selected {
+  border-color: var(--color-pink-accent);
+  background-color: var(--color-pink-soft);
+  box-shadow: 0 0 0 2px var(--color-pink-accent);
+}
+
+.service-option.selected:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 2px var(--color-pink-accent), var(--shadow-md);
+}
+
+.service-option:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.service-option-content {
+  flex: 1;
+}
+
+.service-option-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-xs);
+}
+
+.service-option-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.service-option-meta {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.service-option-duration {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.service-option-price {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-pink-accent);
+}
+
+.service-option-action {
+  margin-left: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .service-option {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .service-option-action {
+    margin-left: 0;
+    margin-top: var(--space-md);
+    width: 100%;
+  }
+  
+  .service-option-action .btn {
+    width: 100%;
+  }
+}

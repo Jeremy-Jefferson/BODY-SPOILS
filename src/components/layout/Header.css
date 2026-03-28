@@ -1,0 +1,112 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  transition: all var(--duration-normal) var(--ease-in-out);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  gap: var(--space-lg);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  flex: 1;
+  justify-content: center;
+}
+
+.header-nav-link {
+  position: relative;
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-text-body);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-in-out);
+  padding: var(--space-xs) 0;
+  letter-spacing: 0.02em;
+}
+
+.header-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-brown-soft);
+  transition: width var(--duration-normal) var(--ease-in-out);
+}
+
+.header-nav-link:hover,
+.header-nav-link.active {
+  color: var(--color-brown-soft);
+}
+
+.header-nav-link.active::after {
+  width: 100%;
+}
+
+.header-actions {
+  margin-left: var(--space-lg);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  color: var(--color-text-heading);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background-color var(--duration-fast) var(--ease-in-out);
+}
+
+.mobile-menu-toggle:hover {
+  background-color: var(--color-bg-soft);
+}
+
+.mobile-menu-toggle:focus {
+  outline: 2px solid var(--color-brown-soft);
+  outline-offset: 2px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .header-inner {
+    height: 90px;
+  }
+  
+  .header-nav {
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    height: 80px;
+  }
+  
+  .header-nav,
+  .header-actions {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+}

@@ -1,0 +1,43 @@
+.logo {
+  display: inline-flex;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: auto;
+  width: auto;
+  transition: transform var(--duration-fast) var(--ease-in-out);
+}
+
+.logo:hover .logo-img {
+  transform: scale(1.02);
+}
+
+/* Logo sizes - much larger for better prominence */
+.logo-sm .logo-img {
+  height: 3rem; /* 48px */
+}
+
+.logo-md .logo-img {
+  height: 4rem; /* 64px */
+}
+
+.logo-lg .logo-img {
+  height: 5rem; /* 80px */
+}
+
+.logo-xl .logo-img {
+  height: 8rem; /* 128px */
+}
+
+/* Responsive logo sizing */
+@media (max-width: 768px) {
+  .logo-xl .logo-img {
+    height: 6rem; /* 96px */
+  }
+  
+  .logo-lg .logo-img {
+    height: 4rem; /* 64px */
+  }
+}

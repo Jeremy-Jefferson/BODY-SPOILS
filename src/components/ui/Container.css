@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  max-width: var(--container-lg);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.container-sm {
+  max-width: var(--container-md);
+}
+
+.container-lg {
+  max-width: var(--container-xl);
+}
+
+.container-xs {
+  max-width: var(--container-sm);
+}
+
+.container-full {
+  max-width: none;
+}
