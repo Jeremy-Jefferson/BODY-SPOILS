@@ -31,29 +31,53 @@ const BookingPage = () => {
       notes: ''
     }
   })
+
   const [isConfirmed, setIsConfirmed] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState(null)
-  
+
   const handleServiceSelect = (service) => {
-    setBookingData(prev => ({ ...prev, service }))
+    setBookingData((prev) => ({ ...prev, service }))
     setCurrentStep('datetime')
   }
-  
+
   const handleDateTimeSelect = (date, time) => {
-    setBookingData(prev => ({ ...prev, date, time }))
+    setBookingData((prev) => ({ ...prev, date, time }))
     setCurrentStep('details')
   }
-  
+
   const handleDetailsSubmit = (clientData) => {
-    setBookingData(prev => ({ ...prev, client: clientData }))
+    setBookingData((prev) => ({ ...prev, client: clientData }))
     setCurrentStep('confirm')
   }
-  
+
+  // 🔥 Clean formatting helpers
+  const formatDate = (date) => {
+    if (!date) return ''
+    try {
+      return new Date(date).toLocaleDateString()
+    } catch {
+      return date
+    }
+  }
+
+  const formatTime = (time) => {
+    if (!time) return ''
+    try {
+      // Handles "14:00" format
+      return new Date(`1970-01-01T${time}`).toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+      })
+    } catch {
+      return time
+    }
+  }
+
   const handleConfirm = async () => {
     setIsSubmitting(true)
     setSubmitError(null)
-    
+
     try {
       const formData = {
         'form-name': 'booking-request',
@@ -63,52 +87,55 @@ const BookingPage = () => {
         phone: bookingData.client.phone,
         notes: bookingData.client.notes || '',
         service: bookingData.service?.title || '',
-        date: bookingData.date || '',
-        time: bookingData.time || ''
+        date: formatDate(bookingData.date),
+        time: formatTime(bookingData.time)
       }
-      
+
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encodeFormData(formData)
       })
-      
+
       if (!response.ok) {
-        throw new Error('Network response was not ok')
+        throw new Error(`Submission failed with status ${response.status}`)
       }
-      
+
       setIsConfirmed(true)
     } catch (error) {
       console.error('Form submission error:', error)
-      setSubmitError('Unable to submit your booking request. Please try again.')
+      setSubmitError(
+        'We couldn’t submit your booking request. Please try again or contact us directly.'
+      )
     } finally {
       setIsSubmitting(false)
     }
   }
-  
+
   const handleBack = () => {
-    const currentIndex = STEPS.findIndex(step => step.id === currentStep)
+    const currentIndex = STEPS.findIndex((step) => step.id === currentStep)
     if (currentIndex > 0) {
       setCurrentStep(STEPS[currentIndex - 1].id)
     }
   }
-  
+
   const getStepIndex = () => {
-    return STEPS.findIndex(step => step.id === currentStep)
+    return STEPS.findIndex((step) => step.id === currentStep)
   }
-  
+
   const renderStep = () => {
     switch (currentStep) {
       case 'service':
         return (
-          <ServiceSelector 
+          <ServiceSelector
             selectedService={bookingData.service}
             onSelect={handleServiceSelect}
           />
         )
+
       case 'datetime':
         return (
-          <DateTimePicker 
+          <DateTimePicker
             selectedService={bookingData.service}
             selectedDate={bookingData.date}
             selectedTime={bookingData.time}
@@ -116,17 +143,19 @@ const BookingPage = () => {
             onBack={handleBack}
           />
         )
+
       case 'details':
         return (
-          <ClientDetailsForm 
+          <ClientDetailsForm
             clientData={bookingData.client}
             onSubmit={handleDetailsSubmit}
             onBack={handleBack}
           />
         )
+
       case 'confirm':
         return (
-          <BookingSummary 
+          <BookingSummary
             bookingData={bookingData}
             onConfirm={handleConfirm}
             onBack={handleBack}
@@ -134,11 +163,12 @@ const BookingPage = () => {
             submitError={submitError}
           />
         )
+
       default:
         return null
     }
   }
-  
+
   if (isConfirmed) {
     return (
       <div className="booking-page">
@@ -146,10 +176,10 @@ const BookingPage = () => {
       </div>
     )
   }
-  
+
   return (
     <div className="booking-page">
-      {/* Hidden form for Netlify Forms detection during build */}
+      {/* 🔥 Hidden Netlify form for detection */}
       <form name="booking-request" data-netlify="true" hidden>
         <input type="text" name="firstName" />
         <input type="text" name="lastName" />
@@ -160,24 +190,22 @@ const BookingPage = () => {
         <input type="text" name="date" />
         <input type="text" name="time" />
       </form>
-      
-      <PageHero 
+
+      <PageHero
         title="Book Your Massage"
         subtitle="Schedule Your Session"
         background="pink"
       />
-      
+
       <section className="section booking-content">
         <Container size="md">
-          <BookingStepper 
+          <BookingStepper
             steps={STEPS}
             currentStep={currentStep}
             currentIndex={getStepIndex()}
           />
-          
-          <div className="booking-form">
-            {renderStep()}
-          </div>
+
+          <div className="booking-form">{renderStep()}</div>
         </Container>
       </section>
     </div>
