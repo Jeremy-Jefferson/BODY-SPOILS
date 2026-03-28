@@ -1,7 +1,7 @@
 import Button from '../ui/Button'
 import './BookingSummary.css'
 
-const BookingSummary = ({ bookingData, onConfirm, onBack }) => {
+const BookingSummary = ({ bookingData, onConfirm, onBack, isSubmitting, submitError }) => {
   const formatDate = (dateString) => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
     return new Date(dateString).toLocaleDateString('en-US', options)
@@ -11,7 +11,7 @@ const BookingSummary = ({ bookingData, onConfirm, onBack }) => {
     <div className="booking-summary">
       <h3 className="booking-summary-title">Review Your Booking</h3>
       <p className="booking-summary-subtitle">
-        Please confirm your appointment details before submitting
+        Please review your appointment details before submitting your request
       </p>
       
       <div className="booking-summary-content">
@@ -68,12 +68,22 @@ const BookingSummary = ({ bookingData, onConfirm, onBack }) => {
         </div>
       </div>
       
+      {submitError && (
+        <div className="booking-summary-error" role="alert">
+          <p>{submitError}</p>
+        </div>
+      )}
+      
+      <p className="booking-summary-note">
+        Submitting this form sends a booking request. Your appointment is not finalized until we confirm it.
+      </p>
+      
       <div className="booking-summary-actions">
-        <Button variant="ghost" onClick={onBack}>
+        <Button variant="ghost" onClick={onBack} disabled={isSubmitting}>
           Back
         </Button>
-        <Button variant="primary" onClick={onConfirm}>
-          Confirm Booking
+        <Button variant="primary" onClick={onConfirm} loading={isSubmitting}>
+          {isSubmitting ? 'Submitting Request...' : 'Submit Booking Request'}
         </Button>
       </div>
     </div>

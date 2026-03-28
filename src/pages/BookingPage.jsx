@@ -7,6 +7,7 @@ import DateTimePicker from '../components/booking/DateTimePicker'
 import ClientDetailsForm from '../components/booking/ClientDetailsForm'
 import BookingSummary from '../components/booking/BookingSummary'
 import BookingConfirmation from '../components/booking/BookingConfirmation'
+import { encodeFormData } from '../utils/encodeFormData'
 import './BookingPage.css'
 
 const STEPS = [
@@ -31,6 +32,8 @@ const BookingPage = () => {
     }
   })
   const [isConfirmed, setIsConfirmed] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState(null)
   
   const handleServiceSelect = (service) => {
     setBookingData(prev => ({ ...prev, service }))
@@ -47,8 +50,40 @@ const BookingPage = () => {
     setCurrentStep('confirm')
   }
   
-  const handleConfirm = () => {
-    setIsConfirmed(true)
+  const handleConfirm = async () => {
+    setIsSubmitting(true)
+    setSubmitError(null)
+    
+    try {
+      const formData = {
+        'form-name': 'booking-request',
+        firstName: bookingData.client.firstName,
+        lastName: bookingData.client.lastName,
+        email: bookingData.client.email,
+        phone: bookingData.client.phone,
+        notes: bookingData.client.notes || '',
+        service: bookingData.service?.title || '',
+        date: bookingData.date || '',
+        time: bookingData.time || ''
+      }
+      
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormData(formData)
+      })
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+      
+      setIsConfirmed(true)
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitError('Unable to submit your booking request. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
   
   const handleBack = () => {
@@ -95,6 +130,8 @@ const BookingPage = () => {
             bookingData={bookingData}
             onConfirm={handleConfirm}
             onBack={handleBack}
+            isSubmitting={isSubmitting}
+            submitError={submitError}
           />
         )
       default:
@@ -112,6 +149,18 @@ const BookingPage = () => {
   
   return (
     <div className="booking-page">
+      {/* Hidden form for Netlify Forms detection during build */}
+      <form name="booking-request" data-netlify="true" hidden>
+        <input type="text" name="firstName" />
+        <input type="text" name="lastName" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <textarea name="notes"></textarea>
+        <input type="text" name="service" />
+        <input type="text" name="date" />
+        <input type="text" name="time" />
+      </form>
+      
       <PageHero 
         title="Book Your Massage"
         subtitle="Schedule Your Session"

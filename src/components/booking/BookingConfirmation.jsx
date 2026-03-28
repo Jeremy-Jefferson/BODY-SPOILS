@@ -8,9 +8,6 @@ const BookingConfirmation = ({ bookingData }) => {
     return new Date(dateString).toLocaleDateString('en-US', options)
   }
   
-  // Generate a static confirmation ID for demo purposes
-  const confirmationId = 'BS-ABC12345'
-  
   return (
     <div className="booking-confirmation">
       <Container size="sm">
@@ -22,9 +19,9 @@ const BookingConfirmation = ({ bookingData }) => {
             </svg>
           </div>
           
-          <h1 className="confirmation-title">Booking Confirmed!</h1>
+          <h1 className="confirmation-title">Request Received</h1>
           <p className="confirmation-text">
-            Thank you for choosing Body Spoils. Your appointment has been successfully booked.
+            Your booking request has been submitted successfully. We'll follow up to confirm your appointment details.
           </p>
           
           <div className="confirmation-details">
@@ -40,15 +37,11 @@ const BookingConfirmation = ({ bookingData }) => {
               <span className="detail-label">Time</span>
               <span className="detail-value">{bookingData.time}</span>
             </div>
-            <div className="confirmation-detail">
-              <span className="detail-label">Confirmation #</span>
-              <span className="detail-value">{confirmationId}</span>
-            </div>
           </div>
           
           <p className="confirmation-note">
-            A confirmation email has been sent to {bookingData.client?.email}. 
-            We look forward to seeing you!
+            We've received your request and will contact you at {bookingData.client?.email} to confirm your appointment. 
+            Please note that your booking is not finalized until you receive confirmation from us.
           </p>
           
           <div className="confirmation-actions">

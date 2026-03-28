@@ -57,6 +57,31 @@
   color: var(--color-pink-accent);
 }
 
+.booking-summary-error {
+  padding: var(--space-md);
+  background-color: var(--color-error-bg, #fef2f2);
+  border: 1px solid var(--color-error, #dc2626);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+}
+
+.booking-summary-error p {
+  color: var(--color-error, #dc2626);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+.booking-summary-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-pink-accent);
+}
+
 .booking-summary-actions {
   display: flex;
   justify-content: space-between;
