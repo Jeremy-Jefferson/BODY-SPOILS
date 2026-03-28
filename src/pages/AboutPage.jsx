@@ -109,7 +109,7 @@ const AboutPage = () => {
           <div className="team-feature">
             <div className="team-feature-image">
               <img 
-                src="public/MYKAH.webp" 
+                src="/MYKAH.webp" 
                 alt="Mykah Jefferson - Licensed Massage Therapist" 
                 className="team-profile-img"
               />

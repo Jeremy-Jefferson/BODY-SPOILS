@@ -137,13 +137,11 @@ const HomePage = () => {
               </Button>
             </div>
             <div className="why-choose-image">
-              <div className="why-choose-image-inner">
-                <img 
-                  src="/Body Spoils Crest.svg" 
-                  alt="Body Spoils Crest" 
-                  className="why-choose-crest-img"
-                />
-              </div>
+              <img 
+                src="/Body Spoils Crest.svg" 
+                alt="Body Spoils Crest" 
+                className="why-choose-crest-img"
+              />
             </div>
           </div>
         </Container>
