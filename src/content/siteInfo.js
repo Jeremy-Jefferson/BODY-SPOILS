@@ -28,7 +28,7 @@ export const siteInfo = {
   social: {
     facebook: 'https://www.facebook.com/BodySpoilsLMT',
     instagram: 'https://instagram.com/bodyspoils',
-    pinterest: 'https://pinterest.com/bodyspoils'
+    // pinterest: 'https://pinterest.com/bodyspoils'
   },
   
   // Navigation
