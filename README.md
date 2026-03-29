@@ -1,5 +1,7 @@
 # Body Spoils — Massage Therapy Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/31d8e984-840b-4014-9c35-c922c62a8d19/deploy-status)](https://app.netlify.com/projects/bodyspoils/deploys)
+
 A premium, client-focused website built for **Body Spoils**, a massage therapy practice centered on relaxation, restoration, and intentional care.
 
 This project is designed to feel **elevated, calming, and conversion-focused**, combining thoughtful UI/UX decisions with a modern frontend architecture.
