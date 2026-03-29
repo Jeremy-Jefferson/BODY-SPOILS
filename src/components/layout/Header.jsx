@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Container from '../ui/Container'
 import Logo from './Logo'
@@ -22,6 +22,10 @@ const Header = () => {
     if (path === '/') return location.pathname === '/'
     return location.pathname.startsWith(path)
   }
+  
+  const handleCloseMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(false)
+  }, [])
   
   return (
     <header className="header" role="banner">
@@ -66,7 +70,7 @@ const Header = () => {
       
       <MobileMenu 
         isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
+        onClose={handleCloseMobileMenu}
         navLinks={navLinks}
       />
     </header>

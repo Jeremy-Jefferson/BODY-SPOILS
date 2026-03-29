@@ -3,67 +3,57 @@ export const services = [
   {
     id: 'swedish-massage',
     title: 'Swedish Massage',
-    description: 'A gentle, flowing massage that eases tension and promotes deep relaxation. Ideal for stress relief and first-time visitors.',
+    description: 'A calming, full-body massage using smooth, flowing strokes to relax the nervous system and ease built-up tension. Perfect for unwinding, improving circulation, and leaving you feeling fully refreshed and restored.',
     duration: '60 min',
-    price: 95,
+    price: 125,
     category: 'relaxation'
   },
+
+  {
+    id: 'swedish-massage',
+    title: 'Swedish Massage',
+    description: 'A calming, full-body massage using smooth, flowing strokes to relax the nervous system and ease built-up tension. Perfect for unwinding, improving circulation, and leaving you feeling fully refreshed and restored.',
+    duration: '90 min',
+    price: 155,
+    category: 'relaxation'
+  },
+
   {
     id: 'deep-tissue-massage',
     title: 'Deep Tissue Massage',
-    description: 'Focused pressure targeting deeper muscle layers to release chronic tension and knots. Best for those with persistent pain or muscular discomfort.',
+    description: 'A focused, therapeutic massage that works into deeper muscle layers to release chronic tension, tightness, and stubborn knots. Ideal for relieving pain, improving mobility, and restoring proper muscle function.',
     duration: '60 min',
-    price: 115,
+    price: 175,
     category: 'therapeutic'
   },
+
   {
-    id: 'hot-stone-therapy',
-    title: 'Hot Stone Therapy',
-    description: 'Heated basalt stones placed on key points to melt tension and promote deep relaxation. A luxurious, warming experience for total body renewal.',
-    duration: '75 min',
-    price: 135,
-    category: 'relaxation'
-  },
-  {
-    id: 'sports-massage',
-    title: 'Sports Massage',
-    description: 'Targeted work on muscle groups used in your activities to enhance performance, prevent injury, and speed recovery. Perfect for active individuals.',
-    duration: '60 min',
-    price: 110,
+    id: 'deep-tissue-massage',
+    title: 'Deep Tissue Massage',
+    description: 'A focused, therapeutic massage that works into deeper muscle layers to release chronic tension, tightness, and stubborn knots. Ideal for relieving pain, improving mobility, and restoring proper muscle function.',
+    duration: '90 min',
+    price: 145,
     category: 'therapeutic'
   },
+
   {
-    id: 'aromatherapy',
-    title: 'Aromatherapy Massage',
-    description: 'Essential oils paired with gentle massage to nurture body and mind. Choose from our curated blends for your desired mood and benefit.',
+    id: 'combo-massage',
+    title: 'Combo Massage',
+    description: 'A balanced blend of gentle, flowing techniques and targeted deep pressure. This customized session promotes deep relaxation while addressing muscle tension and stubborn knots—perfect for those who want the best of both worlds.',
     duration: '60 min',
-    price: 105,
-    category: 'relaxation'
-  },
-  {
-    id: 'prenatal-massage',
-    title: 'Prenatal Massage',
-    description: 'Safe, nurturing massage designed for expecting mothers to relieve pregnancy discomfort and promote deep relaxation.',
-    duration: '60 min',
-    price: 100,
+    price: 145,
     category: 'specialty'
   },
+
   {
-    id: 'couples-massage',
-    title: 'Couples Massage',
-    description: 'Share a relaxing experience with a loved one in our private double room. Both receive customized massages side by side.',
-    duration: '60 min',
-    price: 220,
+    id: 'combo-massage',
+    title: 'Combo Massage',
+    description: 'A balanced blend of gentle, flowing techniques and targeted deep pressure. This customized session promotes deep relaxation while addressing muscle tension and stubborn knots—perfect for those who want the best of both worlds.',
+    duration: '90 min',
+    price: 165,
     category: 'specialty'
   },
-  {
-    id: 'lymphatic-drainage',
-    title: 'Lymphatic Drainage Massage',
-    description: 'A gentle, rhythmic massage that stimulates the lymphatic system to reduce swelling, support immune function, and promote detoxification. Ideal for post-surgical recovery or fluid retention.',
-    duration: '60 min',
-    price: 110,
-    category: 'therapeutic'
-  }
+
 ]
 
 export const getServicesByCategory = (category) => {
