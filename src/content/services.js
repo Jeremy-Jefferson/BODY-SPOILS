@@ -1,7 +1,7 @@
 // Services data for Body Spoils - Massage Therapy Only
 export const services = [
   {
-    id: 'swedish-massage',
+    id: 'swedish-massage-60',
     title: 'Swedish Massage',
     description: 'A calming, full-body massage using smooth, flowing strokes to relax the nervous system and ease built-up tension. Perfect for unwinding, improving circulation, and leaving you feeling fully refreshed and restored.',
     duration: '60 min',
@@ -10,7 +10,7 @@ export const services = [
   },
 
   {
-    id: 'swedish-massage',
+    id: 'swedish-massage-90',
     title: 'Swedish Massage',
     description: 'A calming, full-body massage using smooth, flowing strokes to relax the nervous system and ease built-up tension. Perfect for unwinding, improving circulation, and leaving you feeling fully refreshed and restored.',
     duration: '90 min',
@@ -19,7 +19,7 @@ export const services = [
   },
 
   {
-    id: 'deep-tissue-massage',
+    id: 'deep-tissue-massage-60',
     title: 'Deep Tissue Massage',
     description: 'A focused, therapeutic massage that works into deeper muscle layers to release chronic tension, tightness, and stubborn knots. Ideal for relieving pain, improving mobility, and restoring proper muscle function.',
     duration: '60 min',
@@ -28,7 +28,7 @@ export const services = [
   },
 
   {
-    id: 'deep-tissue-massage',
+    id: 'deep-tissue-massage-90',
     title: 'Deep Tissue Massage',
     description: 'A focused, therapeutic massage that works into deeper muscle layers to release chronic tension, tightness, and stubborn knots. Ideal for relieving pain, improving mobility, and restoring proper muscle function.',
     duration: '90 min',
@@ -37,7 +37,7 @@ export const services = [
   },
 
   {
-    id: 'combo-massage',
+    id: 'combo-massage-60',
     title: 'Combo Massage',
     description: 'A balanced blend of gentle, flowing techniques and targeted deep pressure. This customized session promotes deep relaxation while addressing muscle tension and stubborn knots—perfect for those who want the best of both worlds.',
     duration: '60 min',
@@ -46,7 +46,7 @@ export const services = [
   },
 
   {
-    id: 'combo-massage',
+    id: 'combo-massage-90',
     title: 'Combo Massage',
     description: 'A balanced blend of gentle, flowing techniques and targeted deep pressure. This customized session promotes deep relaxation while addressing muscle tension and stubborn knots—perfect for those who want the best of both worlds.',
     duration: '90 min',

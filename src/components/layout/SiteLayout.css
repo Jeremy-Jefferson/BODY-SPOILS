@@ -7,7 +7,7 @@
 .site-main {
   flex: 1;
   /* Offset for fixed header */
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 /* Skip Link for Accessibility */
@@ -30,6 +30,6 @@
 
 @media (max-width: 1024px) {
   .site-main {
-    padding-top: 90px;
+    padding-top: 75px;
   }
 }

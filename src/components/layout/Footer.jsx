@@ -129,7 +129,7 @@ const Footer = () => {
               </a> */}
             </div>
             <p className="footer-credit">
-              Designed & built by Hungry Ghost DEV
+              Designed & built by <a href="https://www.hungryghost.dev/" target="_blank" rel="noopener noreferrer">Hungry Ghost DEV</a>
             </p>
           </div>
         </Container>

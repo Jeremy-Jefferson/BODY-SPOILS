@@ -31,7 +31,7 @@ const Header = () => {
     <header className="header" role="banner">
       <Container>
         <div className="header-inner">
-          <Logo size="xl" />
+          <Logo size="md" />
           
           <nav className="header-nav" aria-label="Main navigation">
             {navLinks.map((link) => (
